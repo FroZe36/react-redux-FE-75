@@ -20,12 +20,12 @@ const FilmList = () => {
     const {films, filmsLoadingStatus} = useSelector(state => state)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     dispatch(filmsFetching())
-    //     getTopFilms()
-    //         .then(dispatch(filmsFetched(films)))
-    //         .catch(dispatch(filmsFetchingError))
-    // })
+    useEffect(() => {
+        // dispatch(filmsFetching())
+        getTopFilms()
+            .then(dispatch(filmsFetched(films)))
+            // .catch(dispatch(filmsFetchingError))
+    }, [])
 
 
     if (filmsLoadingStatus === "loading") {
